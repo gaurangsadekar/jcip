@@ -25,4 +25,16 @@ Race conditions can be solved by making the accesses to the objects that are rac
 To preserve state consistency of related state variables, update all related state in a single atomic operation.
 
 ### Locking:
+#### Intrinsic Locking:
+Java provides intrinsic locking using the `synchronized` block. Intrinsic locks in Java act as mutexes, which means that at most one thread may own the lock.
+
+No thread executing in a synchronized block can observe another thread to be in the middle of a synchronized block guarded by the same lock.
+
+#### Re-entrancy:
+When a thread requests a lock that is already held by another thread, the requesting thread blocks.
+Reentrancy means that locks are acquired on a per-thread basis rather than a per-invocation basis. Reentrancy is implemented by associating with each lock an acquisition count and an owning thread. Reentrancy facilitates encapsulation of locking behavior. 
+
+Reentrancy basically enables a thread holding a lock to request the same lock again, and that lock is granted to the thread.
+
+### Guarding State with Locks
 
