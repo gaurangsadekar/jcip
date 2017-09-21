@@ -32,9 +32,9 @@ No thread executing in a synchronized block can observe another thread to be in 
 
 #### Re-entrancy:
 When a thread requests a lock that is already held by another thread, the requesting thread blocks.
-Reentrancy means that locks are acquired on a per-thread basis rather than a per-invocation basis. Reentrancy is implemented by associating with each lock an acquisition count and an owning thread. Reentrancy facilitates encapsulation of locking behavior. 
+Reentrancy means that locks are acquired on a per-thread basis rather than a per-invocation basis. Reentrancy is implemented by associating with each lock an acquisition count and an owning thread. Reentrancy facilitates encapsulation of locking behavior.
 
 Reentrancy basically enables a thread holding a lock to request the same lock again, and that lock is granted to the thread.
 
-### Guarding State with Locks
+### Guarding State with Locks:
 
