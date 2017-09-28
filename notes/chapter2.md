@@ -37,4 +37,9 @@ Reentrancy means that locks are acquired on a per-thread basis rather than a per
 Reentrancy basically enables a thread holding a lock to request the same lock again, and that lock is granted to the thread.
 
 ### Guarding State with Locks:
+For each mutable state variable that may be accessed by more than one thread, all accesses to that variable must be performed with the same lock held. Then we say that the variable is guarded by the lock.
+
+A lock doesn't prevent the object from being accessed by other threads, it only prevents any other thread from acquiring the same lock.
+
+### Liveness and Performance:
 
